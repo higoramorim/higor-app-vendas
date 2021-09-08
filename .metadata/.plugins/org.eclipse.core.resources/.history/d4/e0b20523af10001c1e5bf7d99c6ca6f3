@@ -1,0 +1,30 @@
+package com.higor.app.dsvendas.service;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
+import com.higor.app.dsvendas.dto.SaleDTO;
+import com.higor.app.dsvendas.entities.Sale;
+import com.higor.app.dsvendas.repositories.SaleRepository;
+import com.higor.app.dsvendas.repositories.SellerRepository;
+
+@Service
+public class SaleService {
+
+	@Autowired
+	private SaleRepository repository;
+	
+	@Autowired
+	private SellerRepository sellerRepository;
+	
+	@Transactional(readOnly = true)
+	public Page<SaleDTO> findAll(Pageable pageable){
+		sellerRepository.findAll();
+		Page<Sale> result = repository.findAll(pageable);
+		return result.map(x -> new SaleDTO(x));
+	}
+}

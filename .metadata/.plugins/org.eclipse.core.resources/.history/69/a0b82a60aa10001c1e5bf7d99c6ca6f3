@@ -1,0 +1,23 @@
+package com.higor.app.dsvendas.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.higor.app.dsvendas.dto.SaleDTO;
+import com.higor.app.dsvendas.entities.Sale;
+import com.higor.app.dsvendas.repositories.SaleRepository;
+import org.springframework.data.domain.Pageable;
+
+@Service
+public class SaleService {
+
+	@Autowired
+	private SaleRepository repository;
+	
+	public List<SaleDTO> findAll(){
+		List<Sale> result = repository.findAll(Pageable pageable);
+		return result.stream().map(x -> new SaleDTO(x)).collect(Collectors.toList());
+	}
+}
