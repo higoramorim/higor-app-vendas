@@ -10,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.higor.app.dsvendas.dto.SaleDTO;
-import com.higor.app.dsvendas.dto.SaleSuccessDTO;
 import com.higor.app.dsvendas.dto.SaleSumDTO;
 import com.higor.app.dsvendas.entities.Sale;
 import com.higor.app.dsvendas.repositories.SaleRepository;
@@ -35,11 +34,6 @@ public class SaleService {
 	@Transactional
 	public List<SaleSumDTO> amountGroupedBySeller(){
 		return repository.amountGroupedBySeller();
-	}
-	
-	@Transactional
-	public List<SaleSuccessDTO> successGroupedBySeller(){
-		return repository.successGroupedBySeller();
 	}
 
 }

@@ -1,0 +1,13 @@
+package com.higor.app.dsvendas.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.higor.app.dsvendas.dto.SaleSumDTO;
+import com.higor.app.dsvendas.entities.Sale;
+
+public interface SaleRepository extends JpaRepository<Sale, Long>{
+
+	List<SaleSumDTO> amountGroupedBySeller();
+}

@@ -1,0 +1,6 @@
+package com.higor.app.dsvendas.dto;
+
+public class SaleSumDTO {
+
+	private String seller;
+}
