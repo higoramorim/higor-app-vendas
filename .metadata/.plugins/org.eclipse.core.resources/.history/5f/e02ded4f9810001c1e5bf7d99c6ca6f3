@@ -1,0 +1,5 @@
+package com.higor.app.dsvendas.config;
+
+public class SecurityConfig {
+
+}
