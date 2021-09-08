@@ -1,0 +1,20 @@
+package com.higor.app.dsvendas.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.higor.app.dsvendas.entities.Seller;
+import com.higor.app.dsvendas.repositories.SellerRepository;
+
+@Service
+public class SellerService {
+
+	@Autowired
+	private SellerRepository repository;
+	
+	public List<Seller> findAll(){
+		return repository.findAll();
+	}
+}

@@ -1,0 +1,5 @@
+package com.higor.app.dsvendas.controller;
+
+public class SellerController {
+
+}

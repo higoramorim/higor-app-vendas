@@ -1,0 +1,16 @@
+package com.higor.app.dsvendas.dto;
+
+public class SellerDTO {
+
+	private Long id;
+	private String name;
+
+	public SellerDTO() {
+	}
+
+	public SellerDTO(Long id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+}

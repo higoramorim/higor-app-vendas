@@ -1,0 +1,7 @@
+package com.higor.app.dsvendas.dto;
+
+public class SellerDTO {
+
+	private Long id;
+	private String name;
+}
